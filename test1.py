@@ -7,9 +7,6 @@ import math
 import os
 import re
  
-fileall = 'Data/dataset.csv'
-ulasan  = 'Data/ulasan.csv'
-
 def combine_data(filename=None, ulasan=None, output_path=None):
     df = pd.read_csv(filename, encoding = "ISO-8859-1")
 
@@ -47,7 +44,8 @@ def preprocessing(input_path=None): #, stopword=stopword, stemmer=stemmer):
     
     return arr_praproses
 
-
+fileall = 'Data/dataset.csv'
+ulasan  = 'Data/ulasan.csv'
 list_ulasan = preprocessing(input_path=ulasan)
 clean_data  = combine_data(filename=fileall, ulasan=list_ulasan, output_path='Data/clean_data.csv')
 
